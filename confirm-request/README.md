@@ -10,6 +10,6 @@ Start or end your prompt with **confirm**, **please confirm**, **rephrase**, or 
 
 > Update the project documentation to explain the setup process. Please confirm.
 
-The agent rephrases your objective and outlines the goal, scope, assumptions, and uncertainties. It does no research or implementation while preparing this response.
+The agent replies with `request:`, followed by a cleaned-up version that preserves the detail of your request. It adds `need to confirm:` only for a serious risk, gap, or misunderstanding that needs your attention. It does no research or implementation while preparing this response.
 
 Review the restatement, correct anything that is off, and confirm when you are ready for the agent to proceed.
