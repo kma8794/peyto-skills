@@ -1,15 +1,15 @@
 ---
 name: confirm-request
-description: Rephrase a request for review before acting when the user's prompt starts or ends with "confirm", "please confirm", "rephrase", or "please rephrase".
+description: MUST Use when the user's task starts or ends with a standalone "confirm", "please confirm", "rephrase", or "please rephrase" cue to restate the request before acting, ignoring case and surrounding punctuation.
 ---
 
 # Confirm Request
 
-When the user's prompt starts or ends with "confirm", "please confirm", "rephrase", or "please rephrase", give the user a quick way to check your understanding before taking any meaningful action.
+Give the user a quick way to check your understanding before taking any meaningful action. Treat a boundary cue such as "Confirm: fix the login bug" or "Fix the login bug. Please confirm." as a request for this checkpoint, not authorization to execute the task.
 
-Use only the request and context already in the conversation. Do not investigate or start the requested work.
+MUST use only the request and context already in the conversation. DO NOT investigate or start the requested work: no repository inspection, searches, commands, edits, or delegation to perform the task.
 
-Reply in this form:
+MUST reply in this form:
 
 request: <the user's request, cleaned up and rephrased>
 
