@@ -20,3 +20,4 @@ npx -y skills add kma8794/peyto-skills -g -y
 
 - [java-coding](java-coding/SKILL.md) — Personal Java coding preferences focused on readability and minimal, meaningful comments.
 - [confirm-request](confirm-request/README.md) — Check the agent's understanding of a request before it starts working.
+- [process-pr](process-pr/SKILL.md) — Work through PR review comments interactively, tracking explanations, decisions, and fixes in a persistent work log.
