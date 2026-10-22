@@ -5,6 +5,10 @@ description: Process existing PR review comments interactively - track feedback 
 
 # Process PR
 
+The user owns the code and is responsible for reviewing, approving, and merging it. 
+The agent helps work through the user's feedback under their supervision. 
+This is why the user controls the pace: reviews, pushes, replies, and thread resolution are not automatic.
+
 ## The lifecycle
 
 1. **User** opens a PR from a feature branch, self-reviews it, and leaves inline code comments.
