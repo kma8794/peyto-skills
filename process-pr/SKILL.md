@@ -24,11 +24,19 @@ Replies and strategic review can be requested at any point.
 
 Identify the repository and PR from context; ask if ambiguous. Fetch all inline code-comment threads and their replies. General concerns also appear as inline comments; their file location may be incidental. Read the relevant code before classifying feedback.
 
-Reuse the existing PR work log or create `docs/agent/pr-N.md`, following repository conventions. Include the PR URL and a table with:
+Reuse the existing PR work log or create `docs/agent/pr-N.md`, following repository conventions. Include the PR URL and use this table structure; all columns are required:
 
-- Stable item ID, source comment link, file/line, and summary.
-- **Action:** `explain`, `discuss`, or `fix`.
-- **Status:** `open` or `done`; record explicit deferrals or dismissals separately.
+```markdown
+**Action:** `fix` = straightforward change · `discuss` = needs alignment first · `explain` = answer a question
+**Type:** `change` = different approach or behavior · `docs` = documentation update · `refactor` = structure/style/naming
+**Status:** `open` · `done`
+
+| # | Source | File | Line | Summary | Action | Type | Status | What was done |
+|---|--------|------|------|---------|--------|------|--------|---------------|
+| 1 | [comment](URL) | `path/to/file` | 28 | One-line summary | fix | refactor | open | |
+```
+
+Keep **What was done** empty until there is an outcome, then record a short factual explanation suitable for a later PR reply. Record agreed deferrals or dismissals there too, marking the item `done` once the user's decision is settled.
 
 Group replies about the same concern. On refresh, preserve IDs, decisions, and progress; add new concerns without duplicating existing ones.
 
@@ -42,7 +50,7 @@ Handle only the selected item, unless the user requests a batch.
 - **Discuss:** explain the tradeoffs and recommendation; agree on an approach before editing.
 - **Fix:** make the focused change directly. Switch to discussion if a decision is needed.
 
-Assess comments critically; explain disagreements and let the user decide. Check implemented changes before marking them done. Record the outcome, decision, and validation beneath the item's ID. Keep open items above done items without renumbering.
+Assess comments critically; explain disagreements and let the user decide. Check implemented changes before marking them done. Set **Status** to `done` and fill **What was done**; keep any longer decision or validation notes beneath the item's ID. Retain every completed row: never delete it or remove it from the table. Keep open items above done items without renumbering.
 
 Update the log, report the outcome briefly, and wait for the next selection. Unanswered questions and unfinished changes remain open.
 
@@ -55,7 +63,7 @@ Only when the user explicitly asks, reply to each requested comment separately i
 
 Posting a reply must leave the thread unresolved. The user resolves threads.
 
-State the actual outcome in very short, plain English. Skip implementation details. Examples:
+Use **What was done** to state the actual outcome in very short, plain English. Skip implementation details. Examples:
 
 - Renamed.
 - Removed.
