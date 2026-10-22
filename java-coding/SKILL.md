@@ -27,6 +27,13 @@ Within new or necessarily changed code, extract logical steps into small, well-n
 - Comments are rare and important. Use them only to explain WHY something is done in non-obvious cases or to highlight tricky details a reader might miss.
 - Prefer clearer names and code structure over adding an explanatory comment.
 
+## Javadoc for source readers
+
+- Write Javadoc for people browsing the source code. We do not publish generated Javadoc documentation.
+- Keep it short, concrete, and useful. Add it only to convey a specific, important hint a reader might otherwise miss; do not add it merely to satisfy a documentation convention.
+- Use plain text and line breaks that make the comment easy to read in the source. Do not use HTML tags such as `<p>` or `<br>` for formatting.
+- Refer to classes and methods by their plain names. Do not use links such as `{@link ...}` or `@see`; readers will not follow them.
+
 ## Prefer single lines
 
 MUST keep expressions, statements, and declarations on a single line unless the line exceeds 240 characters. This includes method signatures and their parameter lists: wrap them only when the full line exceeds 240 characters. Stream pipelines and builder chains are exceptions and may span multiple lines even below this limit. This rule does not authorize reformatting untouched code.
